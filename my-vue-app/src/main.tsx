@@ -5,7 +5,6 @@ import 'semantic-ui-css/semantic.min.css'
 import 'semantic-ui-react'
 import './App/Layout/App.tsx'
 
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />

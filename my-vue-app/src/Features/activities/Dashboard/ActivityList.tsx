@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { act } from 'react';
 import { Activity } from '../../../App/Models/activity';
 import { Button, Item, Label, Segment } from 'semantic-ui-react';

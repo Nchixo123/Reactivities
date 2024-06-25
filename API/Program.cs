@@ -22,6 +22,7 @@ internal class Program
         app.UseCors("CorsPolicy");
         app.UseAuthorization();
 
+
         app.MapControllers();
 
         using var scope = app.Services.CreateScope();
@@ -29,7 +30,7 @@ internal class Program
         try
         {
             var context = services.GetRequiredService<DataContext>();
-            context.Database.Migrate();
+            Seed.SeedData(context).Wait();
         }
         catch (Exception ex)
         {
