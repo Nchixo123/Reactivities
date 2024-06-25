@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import axios from 'axios';
-import { List } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { Activity } from '../Models/activity';
 import NavBar from './NavBar';
+import ActivityDashboard from '../../Features/activities/Dashboard/ActivityDashboard';
 function App()
 {
     const [activities, setActivities] = useState<Activity[]>([]);
@@ -14,18 +15,14 @@ function App()
             })
     }, [])
 
-  return (
-      <div>
+    return (
+        <Fragment>
           <NavBar />
+            <Container style={{ marginTop: '7em' }}>
+                <ActivityDashboard activities={activities} />
+          </Container>
 
-          <List>
-              {activities.map((activity: Activity) => (
-                  <List.Item key={activity.id}>
-                      {activity.title}
-                  </List.Item>)
-              )}
-          </List>
-      </div>
+      </Fragment>
   )
 }
 
