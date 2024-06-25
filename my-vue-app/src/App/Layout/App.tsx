@@ -14,7 +14,7 @@ function App()
                 setActivities(response.data)
             })
     }, [])
-
+    console.log(activities)
     return (
         <Fragment>
           <NavBar />
